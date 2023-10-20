@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа № 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_upload_page.css') }}">
+</head>
+<body>
+    <h1>Загрузите файл</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br><br>
+        <input type="submit" value="Загрузить">
+        <p>{{ error }}</p>
+    </form>
+</body>
+</html>

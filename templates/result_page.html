@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа № 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_result_page.css') }}">
+</head>
+<body>
+    <h1>Результат</h1>
+    <p>Самое частое слово в файле: "{{ most_common_word }}".</p>
+    <div class="container">
+        <a href="{{ url_for('find_most_common_word') }}" class="button">Назад</a>
+    </div>
+</body>
+</html>
