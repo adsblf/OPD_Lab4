@@ -29,7 +29,7 @@ class TestFindMostCommonWord(unittest.TestCase):  # создаем класс д
         with open('test.docx', 'rb') as f:  # открываем тестовый .docx файл для чтения в бинарном режиме
             response = tester.post('/find_most_common_word', content_type='multipart/form-data', data={'file': f})
             # отправляем POST-запрос на страницу загрузки файлов с тестовым .docx файлом
-            self.assertIn('Самое частое слово в файле: "арбуз"', response.data.decode())  # проверяем, что полученный
+            self.assertIn('Самое частое слово в файле: "машина"', response.data.decode())  # проверяем, что полученный
             # ответ содержит ожидаемый результат
 
     def test_txt_file(self):  # тестируем функцию, которая отвечает за обработку .txt файлов
@@ -37,7 +37,7 @@ class TestFindMostCommonWord(unittest.TestCase):  # создаем класс д
         with open('test.txt', 'rb') as f:  # открываем тестовый .txt файл для чтения
             response = tester.post('/find_most_common_word', content_type='multipart/form-data', data={
                 'file': f})  # отправляем POST-запрос на страницу загрузки файлов с тестовым .txt файлом
-            self.assertIn('Самое частое слово в файле: "арбуз"',
+            self.assertIn('Самое частое слово в файле: "машина"',
                           response.data.decode())  # проверяем, что полученный ответ содержит ожидаемый результат
 
     def test_html_file(self):  # тестируем функцию, которая отвечает за обработку .html файлов
@@ -45,7 +45,7 @@ class TestFindMostCommonWord(unittest.TestCase):  # создаем класс д
         with open('test.html', 'rb') as f:  # открываем тестовый .html файл для чтения
             response = tester.post('/find_most_common_word', content_type='multipart/form-data', data={
                 'file': f})  # отправляем POST-запрос на страницу загрузки файлов с тестовым .html файлом
-            self.assertIn('Самое частое слово в файле: "арбуз"',
+            self.assertIn('Самое частое слово в файле: "машина"',
                           response.data.decode())  # проверяем, что полученный ответ содержит ожидаемый результат
 
 
